@@ -1,0 +1,48 @@
+#
+# system.prop for panda
+#
+
+# ro.cwm.forbid_format=/bootloader,/xloader,/factory,/rom
+
+dalvik.vm.execution-mode=int:jit
+ro.sf.lcd_density=160
+
+
+wifi.interface=wlan0
+
+ro.opengles.version=131072
+persist.hwc.docking.enabled=0
+
+#define defaults for audio D/A mic and power mode
+omap.audio.mic.main=DMic0L    
+omap.audio.mic.sub=DMic0R     
+
+ersist.sys.strictmode.visual=0
+persist.sys.strictmode.disable=1
+persist.sys.root_access=3
+persist.sys.ui.hw=1
+persist.sys.timezone=Europe/Moscow
+persist.sys.language=ru
+persist.sys.country=RU
+ro.product.locale.language=ru
+ro.product.locale.region=RU
+persist.sys.usb.config=mass_storage,adb
+qemu.hw.mainkeys=1
+
+omap.audio.power=PingPong           
+af.resampler.quality=3              
+ro.nf.profile=2                           
+ro.nf.level=512
+ro.sf.hwrotation=270
+
+# temperature sys fs node properties to be used by ThermalValidation/StressTest
+pcb.temp.sensor.sysfs.node=/sys/devices/platform/omap/omap_temp_sensor.0/temp1_input
+#batt.temp.sensor.sysfs.node=/sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0055/power_supply/bq27500-0/temp
+cpu.temp.sensor.sysfs.node=/sys/devices/platform/omap/omap_temp_sensor.0/temp1_input
+# charge current sys fs node property to be used by ThermalValidation
+charge.current.sysfs.node=/sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0055/power_supply/bq27410-battery/current_now
+telephony.sms.send=false
+
+# ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1
+persist.sys.usb.config=mtp,adb
+# ro.additionalmounts=/mnt/emmc;/mnt/usbdisk

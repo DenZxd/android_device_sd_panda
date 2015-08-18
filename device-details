@@ -1,0 +1,10 @@
+shell@android:/sys/bus/i2c/drivers $ ls
+bma250 --accelerometer
+bq2416x --battery charger
+bq27410 --battery management driver
+dummy
+ft5x0x_ts --touch screen sensor
+mma8452 --accelerometer (not used)
+tmp103_temp_sensor --temp sensor
+twl
+twl6040 --8-Channel High Quality Low-Power Audio Codec
