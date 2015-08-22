@@ -23,7 +23,7 @@
 DEVICE_FOLDER := device/sd/x7
 TARGET_BOOTLOADER_BOARD_NAME := x7
 
-$(call inherit-product, device/bn/common/common.mk)
+$(call inherit-product, device/sd/sd-common/common.mk)
 
 # copy all kernel modules under the "modules" directory to system/lib/modules
 #PRODUCT_COPY_FILES += $(shell \
