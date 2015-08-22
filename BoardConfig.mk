@@ -20,7 +20,7 @@ DEVICE_FOLDER := device/sd/x7
 TARGET_BOARD_OMAP_CPU := 4470
 
 # inherit from common
--include device/sd/common/BoardConfigCommon.mk
+-include device/sd/sd-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
 -include vendor/sd/sd-common/BoardConfigVendor.mk
