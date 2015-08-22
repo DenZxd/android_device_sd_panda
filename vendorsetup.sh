@@ -20,5 +20,5 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo full_panda-eng
-add_lunch_combo cm_panda-userdebug
+add_lunch_combo full_x7-eng
+add_lunch_combo cm_x7-userdebug

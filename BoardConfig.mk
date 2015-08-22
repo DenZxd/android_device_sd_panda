@@ -16,7 +16,7 @@
 
 # These two variables are set first, so they can be overridden
 # by BoardConfigVendor.mk
-DEVICE_FOLDER := device/sd/panda
+DEVICE_FOLDER := device/sd/x7
 TARGET_BOARD_OMAP_CPU := 4470
 
 # inherit from common
@@ -30,17 +30,17 @@ TARGET_BOARD_OMAP_CPU := 4470
 BOARD_USES_UBOOT := true
 
 # Default values, possibly overridden by BoardConfigVendor.mk
-TARGET_BOARD_INFO_FILE := device/sd/panda/board-info.txt
+TARGET_BOARD_INFO_FILE := device/sd/x7/board-info.txt
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/panda/recovery/recovery_ui.c
-TARGET_RECOVERY_INITRC := device/sd/panda/recovery/init.rc
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c
+TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
 
 # Use the non-open-source parts, if they're present
--include vendor/sd/panda/BoardConfigVendor.mk
+-include vendor/sd/x7/BoardConfigVendor.mk
 
 TARGET_KERNEL_CONFIG := panda_X7_defconfig
-TARGET_KERNEL_SOURCE := kernel/sd/panda
+TARGET_KERNEL_SOURCE := kernel/sd/x7
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-linux-androideabi-4.6
 
 SGX_MODULES:

@@ -20,8 +20,8 @@
 #
 # Everything in this directory will become public
 
-DEVICE_FOLDER := device/sd/panda
-TARGET_BOOTLOADER_BOARD_NAME := panda
+DEVICE_FOLDER := device/sd/x7
+TARGET_BOOTLOADER_BOARD_NAME := x7
 
 $(call inherit-product, device/bn/common/common.mk)
 

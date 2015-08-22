@@ -26,5 +26,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_panda.mk 
+    $(LOCAL_DIR)/full_x7.mk 
 

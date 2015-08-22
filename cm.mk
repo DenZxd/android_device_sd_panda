@@ -20,17 +20,17 @@ TARGET_SCREEN_HEIGHT := 800
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
-# Inherit device configuration for panda
-$(call inherit-product, device/sd/panda/full_panda.mk)
+# Inherit device configuration for x7
+$(call inherit-product, device/sd/x7/full_x7.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/sd/panda/overlay/aosp
+DEVICE_PACKAGE_OVERLAYS += device/sd/x7/overlay/aosp
 
 BOARD_USE_CUSTOM_LIBION := true
 
-PRODUCT_NAME := cm_panda
-PRODUCT_DEVICE := panda
+PRODUCT_NAME := cm_x7
+PRODUCT_DEVICE := x7
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := Panda
+PRODUCT_MODEL := x7
 PRODUCT_MANUFACTURER := SmartDevices
 PRODUCT_RELEASE_NAME := X7
 

@@ -17,7 +17,7 @@ LOCAL_PATH := $(call my-dir)
 # protect makefile from other boards
 # if some modules are built directly from this directory (not subdirectories),
 # their rules should be written here.
-ifeq ($(TARGET_DEVICE),panda)
+ifeq ($(TARGET_DEVICE),x7)
 include $(CLEAR_VARS)
 
 ifneq ($(TARGET_SIMULATOR),true)
