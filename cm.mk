@@ -27,7 +27,7 @@ DEVICE_PACKAGE_OVERLAYS += device/sd/panda/overlay/aosp
 
 BOARD_USE_CUSTOM_LIBION := true
 
-PRODUCT_NAME := full_panda
+PRODUCT_NAME := cm_panda
 PRODUCT_DEVICE := panda
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := Panda
