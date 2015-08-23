@@ -41,7 +41,7 @@ TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
 
 TARGET_KERNEL_CONFIG := panda_X7_defconfig
 TARGET_KERNEL_SOURCE := kernel/sd/x7
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-linux-androideabi-4.6
+TARGET_KERNEL_CUSTOM_TOOLCHAIN :=
 
 SGX_MODULES:
 	make clean -C $(COMMON_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android
