@@ -29,8 +29,6 @@ TARGET_BOARD_OMAP_CPU := 4470
 # Kernel/Boot
 BOARD_USES_UBOOT := true
 
-# Default values, possibly overridden by BoardConfigVendor.mk
-TARGET_BOARD_INFO_FILE := device/sd/x7/board-info.txt
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c
