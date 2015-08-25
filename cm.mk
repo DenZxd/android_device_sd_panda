@@ -22,6 +22,7 @@ $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration for x7
 $(call inherit-product, device/sd/x7/full_x7.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/sd/x7/overlay/aosp
 
