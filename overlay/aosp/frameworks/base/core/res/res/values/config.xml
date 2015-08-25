@@ -25,7 +25,7 @@
     <bool name="config_sms_capable">false</bool>
     <!-- Boolean indicating where bluetooth is always powered on but kept at
          low power mode -->
-    <bool translatable="false" name="config_bluetooth_adapter_quick_switch">false</bool>
+    <!-- bool translatable="false" name="config_bluetooth_adapter_quick_switch">false</bool -->
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
