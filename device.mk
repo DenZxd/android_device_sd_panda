@@ -21,7 +21,7 @@
 # Everything in this directory will become public
 
 DEVICE_FOLDER := device/sd/x7
-TARGET_BOOTLOADER_BOARD_NAME := x7
+TARGET_BOOTLOADER_BOARD_NAME := omap4pandaboard
 
 $(call inherit-product, device/sd/sd-common/common.mk)
 
