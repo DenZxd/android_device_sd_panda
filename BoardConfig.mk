@@ -37,8 +37,10 @@ TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
 # Use the non-open-source parts, if they're present
 -include vendor/sd/x7/BoardConfigVendor.mk
 
-TARGET_KERNEL_CONFIG := panda_X7_defconfig
-TARGET_KERNEL_SOURCE := kernel/sd/x7
+# Keep this as a fallback
+TARGET_PREBUILT_KERNEL := device/sd/x7/kernel
+# TARGET_KERNEL_CONFIG := panda_X7_defconfig
+# TARGET_KERNEL_SOURCE := kernel/sd/x7
 TARGET_KERNEL_CUSTOM_TOOLCHAIN :=
 
 # SGX_MODULES:
