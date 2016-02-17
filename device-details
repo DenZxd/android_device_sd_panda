@@ -8,3 +8,13 @@ mma8452 --accelerometer (not used)
 tmp103_temp_sensor --temp sensor
 twl
 twl6040 --8-Channel High Quality Low-Power Audio Codec
+CLAA070WP03  - panel
+
+___________
+
+inside
+EST-04-0700-0344 V1 - touch capacitive screen
+K3PE0E000M-XG(2) - LPDDR2 16 GB samsung 2CH x32/ch 16-FBGA, 12x12 PoP, QDP, 128Mx32*4
+THGBM2G7D4FBAI9  -   e・MMC Toshiba 16 GBytes (e-MMC Version 4.4) 
+SN75 LVDS83B - FlatLinkTM Transmitter TI
+twl6040a2 TI
