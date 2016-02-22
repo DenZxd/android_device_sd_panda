@@ -31,8 +31,8 @@ BOARD_USES_UBOOT := true
 
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c
-TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
+#BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c
+#TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
 
 # Use the non-open-source parts, if they're present
 -include vendor/sd/x7/BoardConfigVendor.mk
@@ -63,26 +63,26 @@ TARGET_KERNEL_MODULES := WIFI_MODULES
 #SGX_MODULES
 
 # Recovery/TWRP Config
-DEVICE_RESOLUTION := 1280x800
-TW_BRIGHTNESS_PATH := /sys/class/backlight/pwm-backlight.0/brightness
+#DEVICE_RESOLUTION := 1280x800
+#TW_BRIGHTNESS_PATH := /sys/class/backlight/pwm-backlight.0/brightness
 #TW_NO_SCREEN_BLANK := true
 
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-RECOVERY_SDCARD_ON_DATA := true
+#RECOVERY_GRAPHICS_USE_LINELENGTH := true
+#RECOVERY_SDCARD_ON_DATA := true
 
 DISABLE_DEXPREOPT := true
 
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/sdcard"
+#TW_INTERNAL_STORAGE_PATH := "/data/media"
+#TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+#TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-TW_ALWAYS_RMRF := true
-TW_DEFAULT_EXTERNAL_STORAGE := true
-TWRP_EVENT_LOGGING := true
+#TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+#TW_ALWAYS_RMRF := true
+#TW_DEFAULT_EXTERNAL_STORAGE := true
+#TWRP_EVENT_LOGGING := true
 
-BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+#BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 #TW_NO_SCREEN_TIMEOUT := true
-RECOVERY_TOUCHSCREEN_SWAP_XY := true
-RECOVERY_TOUCHSCREEN_FLIP_Y := true
+#RECOVERY_TOUCHSCREEN_SWAP_XY := true
+#RECOVERY_TOUCHSCREEN_FLIP_Y := true
 
