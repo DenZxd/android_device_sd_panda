@@ -39,8 +39,8 @@ TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
 
 # Keep this as a fallback
 TARGET_PREBUILT_KERNEL := device/sd/x7/kernel
-# TARGET_KERNEL_CONFIG := panda_X7_defconfig
-# TARGET_KERNEL_SOURCE := kernel/sd/x7
+TARGET_KERNEL_CONFIG := panda_X7_defconfig
+TARGET_KERNEL_SOURCE := kernel/sd/x7
 TARGET_KERNEL_CUSTOM_TOOLCHAIN :=
 
 # SGX_MODULES:
