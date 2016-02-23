@@ -33,6 +33,12 @@ BOARD_USES_UBOOT := true
 # Recovery
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c
 #TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
+#for CWM support
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_RECOVERY_UI_LIB := librecovery_ui_panda
+# device-specific extensions to the updater binary
+TARGET_RELEASETOOLS_EXTENSIONS := device/ti/panda
+
 
 # Use the non-open-source parts, if they're present
 -include vendor/sd/x7/BoardConfigVendor.mk
