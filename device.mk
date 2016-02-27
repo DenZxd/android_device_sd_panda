@@ -21,7 +21,7 @@
 # Everything in this directory will become public
 
 DEVICE_FOLDER := device/sd/x7
-TARGET_BOOTLOADER_BOARD_NAME := omap4pandaboard
+TARGET_BOOTLOADER_BOARD_NAME := panda
 
 $(call inherit-product, device/sd/sd-common/common.mk)
 
@@ -31,12 +31,30 @@ $(call inherit-product, device/sd/sd-common/common.mk)
 #    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
 #    | tr '\n' ' ')
 
+# Hardware HALs
+PRODUCT_PACKAGES += \
+    hwcomposer.omap4 \
+    audio.primary.default \
+    audio.primary.omap4 \
+    audio.a2dp.default \
+    audio.hdmi.omap4 \
+    audio.r_submix.default \
+    camera.omap4 \
+    gps.omap4
+
 PRODUCT_COPY_FILES += \
+	$(DEVICE_FOLDER)/root/fstab.omap4pandaboard:recovery/root/fstab.omap4pandaboard \
 	$(DEVICE_FOLDER)/root/init.omap4pandaboard.rc:root/init.omap4pandaboard.rc \
 	$(DEVICE_FOLDER)/root/init.omap4pandaboard.usb.rc:root/init.omap4pandaboard.usb.rc \
 	$(DEVICE_FOLDER)/root/ueventd.omap4pandaboard.rc:root/ueventd.omap4pandaboard.rc \
-	$(DEVICE_FOLDER)/root/init.omap4pandaboard.wlan.rc:root/init.omap4pandaboard.wlan.rc \
+	$(DEVICE_FOLDER)/root/init.omap4pandaboard.wlan.rc:root/init.omap4pandaboard.wlan.rc
 
+PRODUCT_COPY_FILES += \
+	$(DEVICE_FOLDER)/recovery/fstab.omap4pandaboard:recovery/root/fstab.omap4pandaboard \
+	$(DEVICE_FOLDER)/recovery/g_android.ko:recovery/root/g_android.ko \
+	$(DEVICE_FOLDER)/recovery/nls_cp437.ko:recovery/root/nls_cp437.ko \
+	$(DEVICE_FOLDER)/recovery/nls_utf8.ko:recovery/root/nls_utf8.ko \
+	$(DEVICE_FOLDER)/recovery/vfat.ko:recovery/root/vfat.ko
 # Vold
 PRODUCT_COPY_FILES += \
 	$(DEVICE_FOLDER)/prebuilt/etc/vold.panda.fstab:system/etc/vold.fstab
