@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
     gps.omap4
 
 PRODUCT_COPY_FILES += \
-	
+	$(DEVICE_FOLDER)/root/fstab.omap4pandaboard:root/fstab.omap4pandaboard \
 	$(DEVICE_FOLDER)/root/ueventd.rc:root/ueventd.rc \
 	$(DEVICE_FOLDER)/root/init.rc:root/init.rc \
 	$(DEVICE_FOLDER)/root/init.omap4pandaboard.rc:root/init.omap4pandaboard.rc \
