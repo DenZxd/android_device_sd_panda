@@ -43,13 +43,18 @@ PRODUCT_PACKAGES += \
     gps.omap4
 
 PRODUCT_COPY_FILES += \
-	$(DEVICE_FOLDER)/root/fstab.omap4pandaboard:recovery/root/fstab.omap4pandaboard \
+	
+	$(DEVICE_FOLDER)/root/ueventd.rc:root/ueventd.rc \
+	$(DEVICE_FOLDER)/root/init.rc:root/init.rc \
 	$(DEVICE_FOLDER)/root/init.omap4pandaboard.rc:root/init.omap4pandaboard.rc \
 	$(DEVICE_FOLDER)/root/init.omap4pandaboard.usb.rc:root/init.omap4pandaboard.usb.rc \
 	$(DEVICE_FOLDER)/root/ueventd.omap4pandaboard.rc:root/ueventd.omap4pandaboard.rc \
 	$(DEVICE_FOLDER)/root/init.omap4pandaboard.wlan.rc:root/init.omap4pandaboard.wlan.rc
 
 PRODUCT_COPY_FILES += \
+	$(DEVICE_FOLDER)/recovery/ueventd.rc:recovery/root/ueventd.rc \
+	$(DEVICE_FOLDER)/recovery/init.rc:recovery/root/init.rc \
+	$(DEVICE_FOLDER)/recovery/fat.ko:recovery/root/fat.ko \
 	$(DEVICE_FOLDER)/recovery/fstab.omap4pandaboard:recovery/root/fstab.omap4pandaboard \
 	$(DEVICE_FOLDER)/recovery/g_android.ko:recovery/root/g_android.ko \
 	$(DEVICE_FOLDER)/recovery/nls_cp437.ko:recovery/root/nls_cp437.ko \
