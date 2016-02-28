@@ -76,4 +76,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=2m \
     dalvik.vm.heapmaxfree=8m
 
+$(call inherit-product, hardware/ti/wpan/ti-wpan-products.mk)
 $(call inherit-product-if-exists, vendor/sd/hd-common/hd-common-vendor.mk)
