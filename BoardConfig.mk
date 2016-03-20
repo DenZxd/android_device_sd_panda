@@ -23,12 +23,7 @@ TARGET_BOARD_OMAP_CPU := 4470
 -include device/sd/sd-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/sd/sd-common/BoardConfigVendor.mk
-
-
-# Kernel/Boot
-BOARD_USES_UBOOT := true
-
+-include vendor/sd/hd-common/BoardConfigVendor.mk
 
 # Recovery
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c
@@ -49,7 +44,7 @@ TARGET_KERNEL_CONFIG := panda_X72_defconfig
 TARGET_KERNEL_SOURCE := kernel/sd/x7
 TARGET_KERNEL_CUSTOM_TOOLCHAIN :=
 #BOARD_CUSTOM_BOOTIMG_MK := device/sd/x7/bootimg.mk
-BOARD_USES_UBOOT := true
+#BOARD_USES_UBOOT := true
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
@@ -70,7 +65,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 #	mv hardware/ti/wlan/mac80211/compat_wl12xx/drivers/net/wireless/wl12xx/wl12xx_sdio.ko $(KERNEL_MODULES_OUT)
 
 #TARGET_KERNEL_MODULES := WIFI_MODULES
-TARGET_KERNEL_MODULES := SGX_MODULES
+#TARGET_KERNEL_MODULES := SGX_MODULES
 
 # Recovery/TWRP Config
 #DEVICE_RESOLUTION := 1280x800
