@@ -23,7 +23,7 @@ TARGET_BOARD_OMAP_CPU := 4470
 -include device/sd/sd-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/sd/hd-common/BoardConfigVendor.mk
+-include vendor/sd/sqbin-common/BoardConfigVendor.mk
 
 # Recovery
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c

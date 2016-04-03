@@ -23,6 +23,8 @@
 DEVICE_FOLDER := device/sd/x7
 TARGET_BOOTLOADER_BOARD_NAME := panda
 
+TARGET_OTA_ASSERT_DEVICE := panda,x7,X7,SmartQ
+
 $(call inherit-product, device/sd/sd-common/common.mk)
 
 # copy all kernel modules under the "modules" directory to system/lib/modules
@@ -33,14 +35,14 @@ $(call inherit-product, device/sd/sd-common/common.mk)
 
 # Hardware HALs
 PRODUCT_PACKAGES += \
-    hwcomposer.omap4 \
+#   hwcomposer.omap4 \
     audio.primary.default \
-    audio.primary.omap4 \
+#   audio.primary.omap4 \
     audio.a2dp.default \
-    audio.hdmi.omap4 \
+#   audio.hdmi.omap4 \
     audio.r_submix.default \
-    camera.omap4 \
-    gps.omap4
+#   camera.omap4 \
+#   gps.omap4
 
 PRODUCT_COPY_FILES += \
 	$(DEVICE_FOLDER)/root/fstab.omap4pandaboard:root/fstab.omap4pandaboard \
@@ -82,4 +84,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapmaxfree=8m
 
 $(call inherit-product, hardware/ti/wpan/ti-wpan-products.mk)
-$(call inherit-product-if-exists, vendor/sd/hd-common/hd-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/sd/sqbin-common/sqbin-common-vendor.mk)
