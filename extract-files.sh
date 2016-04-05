@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VENDOR=sd
-DEVICE=hd-common
+DEVICE=sqbin-common
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 
@@ -16,5 +16,5 @@ done
 
 ./setup-makefiles.sh
 
-# Call up to bowser-common
-../common/extract-files.sh
+# Call up to sd-common
+../sd-common/extract-files.sh
