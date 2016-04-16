@@ -26,13 +26,13 @@ TARGET_BOARD_OMAP_CPU := 4470
 -include vendor/sd/sqbin-common/BoardConfigVendor.mk
 
 # Recovery
-#BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c
-#TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
-#for CWM support
-#TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-#TARGET_RECOVERY_UI_LIB := librecovery_ui_panda
+# BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/sd/x7/recovery/recovery_ui.c
+# TARGET_RECOVERY_INITRC := device/sd/x7/recovery/init.rc
+# for CWM support
+# TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+# TARGET_RECOVERY_UI_LIB := librecovery_ui_panda
 # device-specific extensions to the updater binary
-#TARGET_RELEASETOOLS_EXTENSIONS := device/ti/panda
+# TARGET_RELEASETOOLS_EXTENSIONS := device/ti/panda
 
 
 # Use the non-open-source parts, if they're present
@@ -49,11 +49,11 @@ TARGET_KERNEL_CUSTOM_TOOLCHAIN :=
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 #SGX_MODULES:
-	make clean -C $(COMMON_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android
-	cp $(TARGET_KERNEL_SOURCE)/drivers/video/omap2/omapfb/omapfb.h $(KERNEL_OUT)/drivers/video/omap2/omapfb/omapfb.h
-	make -j8 -C $(COMMON_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android ARCH=arm KERNEL_CROSS_COMPILE=arm-eabi- CROSS_COMPILE=arm-eabi- KERNELDIR=$(KERNEL_OUT) TARGET_PRODUCT="blaze_tablet" BUILD=release TARGET_SGX=544sc PLATFORM_VERSION=4.0
-	mv $(KERNEL_OUT)/../../target/kbuild/pvrsrvkm_sgx544_112.ko $(KERNEL_MODULES_OUT)
-	$(ARM_EABI_TOOLCHAIN)/arm-eabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/pvrsrvkm_sgx544_112.ko
+#	make clean -C $(COMMON_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android
+#	cp $(TARGET_KERNEL_SOURCE)/drivers/video/omap2/omapfb/omapfb.h $(KERNEL_OUT)/drivers/video/omap2/omapfb/omapfb.h
+#	make -j8 -C $(COMMON_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android ARCH=arm KERNEL_CROSS_COMPILE=arm-eabi- CROSS_COMPILE=arm-eabi- KERNELDIR=$(KERNEL_OUT) #TARGET_PRODUCT="blaze_tablet" BUILD=release TARGET_SGX=544sc PLATFORM_VERSION=4.0
+#	mv $(KERNEL_OUT)/../../target/kbuild/pvrsrvkm_sgx544_112.ko $(KERNEL_MODULES_OUT)
+#	$(ARM_EABI_TOOLCHAIN)/arm-eabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/pvrsrvkm_sgx544_112.ko
 
 #WIFI_MODULES:
 #	make -C hardware/ti/wlan/mac80211/compat_wl12xx KERNELDIR=$(KERNEL_OUT) KLIB=$(KERNEL_OUT) KLIB_BUILD=$(KERNEL_OUT) ARCH=arm CROSS_COMPILE=arm-eabi-

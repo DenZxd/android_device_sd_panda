@@ -26,7 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/sd/x7/overlay/aosp
 
-BOARD_USE_CUSTOM_LIBION := true
+# BOARD_USE_CUSTOM_LIBION := true
 
 PRODUCT_NAME := cm_x7
 PRODUCT_DEVICE := x7

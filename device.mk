@@ -21,7 +21,7 @@
 # Everything in this directory will become public
 
 DEVICE_FOLDER := device/sd/x7
-TARGET_BOOTLOADER_BOARD_NAME := panda
+# TARGET_BOOTLOADER_BOARD_NAME := panda
 
 TARGET_OTA_ASSERT_DEVICE := panda,x7,X7,SmartQ
 
@@ -34,15 +34,12 @@ $(call inherit-product, device/sd/sd-common/common.mk)
 #    | tr '\n' ' ')
 
 # Hardware HALs
-PRODUCT_PACKAGES += \
-#   hwcomposer.omap4 \
-    audio.primary.default \
-#   audio.primary.omap4 \
-    audio.a2dp.default \
-#   audio.hdmi.omap4 \
-    audio.r_submix.default \
-#   camera.omap4 \
-#   gps.omap4
+# PRODUCT_PACKAGES += \
+#    hwcomposer.omap4
+#    audio.primary.omap4 \
+#    audio.hdmi.omap4 \
+#    camera.omap4 \ 
+#    gps.omap4
 
 PRODUCT_COPY_FILES += \
 	$(DEVICE_FOLDER)/root/fstab.omap4pandaboard:root/fstab.omap4pandaboard \
@@ -76,12 +73,23 @@ PRODUCT_AAPT_CONFIG := ldpi mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapsize=402m \
+    dalvik.vm.heapstartsize=5m \
+    dalvik.vm.heapgrowthlimit=48m \
+    dalvik.vm.heapsize=256m \
     dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=2m
+
+# Set dirty regions off
+PRODUCT_PROPERTY_OVERRIDES += \
+    hwui.render_dirty_regions=false \
+    persist.sys.ui.hw=1 \
+    ro.hwui.disable_scissor_opt=true \
+    persist.sys.use_dithering=1 \
+    persist.hwc.mirroring.region=0:0:800:1280 \
+    persist.hwc.mirroring.transform=1 \
+    ro.sf.hwrotation=270 \
+    persist.hwc.bltpolicy=0
 
 # $(call inherit-product, hardware/ti/wpan/ti-wpan-products.mk)
 $(call inherit-product-if-exists, vendor/sd/sqbin-common/sqbin-common-vendor.mk)
