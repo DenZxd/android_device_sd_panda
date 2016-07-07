@@ -19,13 +19,16 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
+PRODUCT_PROPERTY_OVERRIDES := \
+        net.dns1=8.8.8.8 \
+        net.dns2=8.8.4.4
+
 
 # This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
-$(call inherit-product, device/sd/x7/device.mk)
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-
+$(call inherit-product, device/sd/x7/device.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_x7

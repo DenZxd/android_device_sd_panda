@@ -18,6 +18,11 @@
 # by BoardConfigVendor.mk
 DEVICE_FOLDER := device/sd/x7
 TARGET_BOARD_OMAP_CPU := 4470
+TARGET_NO_RADIOIMAGE := true
+TARGET_NO_BOOTLOADER := true
+TARGET_BOARD_PLATFORM := omap4
+TARGET_BOOTLOADER_BOARD_NAME := panda
+
 
 # inherit from common
 -include device/sd/sd-common/BoardConfigCommon.mk
@@ -43,6 +48,7 @@ TARGET_PREBUILT_KERNEL := device/sd/x7/kernel
 TARGET_KERNEL_CONFIG := panda_X72_defconfig
 TARGET_KERNEL_SOURCE := kernel/sd/x7
 TARGET_KERNEL_CUSTOM_TOOLCHAIN :=
+
 #BOARD_CUSTOM_BOOTIMG_MK := device/sd/x7/bootimg.mk
 #BOARD_USES_UBOOT := true
 
