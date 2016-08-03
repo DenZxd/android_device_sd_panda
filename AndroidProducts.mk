@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2011 Texas Instruments
+# Copyright (C) 2008 The Android Open Source Project
+# Copyright (C) 2011 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,5 +27,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_x7.mk 
-
+    $(LOCAL_DIR)/full_x7.mk

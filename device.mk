@@ -27,47 +27,24 @@ TARGET_OTA_ASSERT_DEVICE := panda,x7,X7,SmartQ
 
 $(call inherit-product, device/sd/sd-common/common.mk)
 
-# copy all kernel modules under the "modules" directory to system/lib/modules
-#PRODUCT_COPY_FILES += $(shell \
-#    find $(DEVICE_FOLDER)/modules -name '*.ko' \
-#    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
-#    | tr '\n' ' ')
-
-# Hardware HALs
- PRODUCT_PACKAGES += \
-   hwcomposer.omap4 \
-   camera.omap4
+# Device overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_FOLDER)/overlay/aosp
 
 PRODUCT_COPY_FILES += \
 	$(DEVICE_FOLDER)/root/fstab.omap4pandaboard:root/fstab.omap4pandaboard \
-	$(DEVICE_FOLDER)/root/ueventd.rc:root/ueventd.rc \
-	$(DEVICE_FOLDER)/root/init.rc:root/init.rc \
 	$(DEVICE_FOLDER)/root/init.omap4pandaboard.rc:root/init.omap4pandaboard.rc \
 	$(DEVICE_FOLDER)/root/init.omap4pandaboard.usb.rc:root/init.omap4pandaboard.usb.rc \
+	$(DEVICE_FOLDER)/recovery/init.recovery.omap4pandaboard.rc:/root/init.recovery.omap4pandaboard.rc \
 	$(DEVICE_FOLDER)/root/ueventd.omap4pandaboard.rc:root/ueventd.omap4pandaboard.rc \
-	$(DEVICE_FOLDER)/root/init.omap4pandaboard.wlan.rc:root/init.omap4pandaboard.wlan.rc
 
-PRODUCT_COPY_FILES += \
-	$(DEVICE_FOLDER)/recovery/ueventd.rc:recovery/root/ueventd.rc \
-	$(DEVICE_FOLDER)/recovery/init.rc:recovery/root/init.rc \
-	$(DEVICE_FOLDER)/recovery/fat.ko:recovery/root/fat.ko \
-	$(DEVICE_FOLDER)/recovery/fstab.omap4pandaboard:recovery/root/fstab.omap4pandaboard \
-	$(DEVICE_FOLDER)/recovery/g_android.ko:recovery/root/g_android.ko \
-	$(DEVICE_FOLDER)/recovery/nls_cp437.ko:recovery/root/nls_cp437.ko \
-	$(DEVICE_FOLDER)/recovery/nls_utf8.ko:recovery/root/nls_utf8.ko \
-	$(DEVICE_FOLDER)/recovery/vfat.ko:recovery/root/vfat.ko
-# Vold
-PRODUCT_COPY_FILES += \
-	$(DEVICE_FOLDER)/prebuilt/etc/vold.panda.fstab:system/etc/vold.fstab
+# Device settings
+PRODUCT_PROPERTY_OVERRIDES += \
+    usb.vendor=0451 \
+    usb.product.adb=D109 \
+    usb.product.mtpadb=D109 \
 
 
-# postrecoveryboot for recovery
-# PRODUCT_COPY_FILES += \
-#    $(DEVICE_FOLDER)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
-
-PRODUCT_AAPT_CONFIG := ldpi mdpi hdpi xhdpi
-
-PRODUCT_AAPT_PREF_CONFIG := mdpi
+PRODUCT_AAPT_CONFIG := mdpi ldpi  hdpi xhdpi
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=5m \
@@ -76,18 +53,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=2m
-
-# Set dirty regions off
-PRODUCT_PROPERTY_OVERRIDES += \
-    hwui.render_dirty_regions=false \
-    wifi.interface=wlan0 \
-    persist.sys.ui.hw=1 \
-    ro.hwui.disable_scissor_opt=true \
-    persist.sys.use_dithering=1 \
-    persist.hwc.mirroring.region=0:0:800:1280 \
-    persist.hwc.mirroring.transform=1 \
-    ro.sf.hwrotation=270 \
-    persist.hwc.bltpolicy=0
 
 # $(call inherit-product, hardware/ti/wpan/ti-wpan-products.mk)
 $(call inherit-product-if-exists, vendor/sd/sqbin-common/sqbin-common-vendor.mk)

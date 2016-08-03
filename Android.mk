@@ -12,16 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+ifneq ($(filter x7,$(TARGET_DEVICE)),)
 LOCAL_PATH := $(call my-dir)
 
-# protect makefile from other boards
-# if some modules are built directly from this directory (not subdirectories),
-# their rules should be written here.
-ifeq ($(TARGET_DEVICE),x7)
-include $(CLEAR_VARS)
-
 ifneq ($(TARGET_SIMULATOR),true)
-include $(call all-makefiles-under,$(LOCAL_PATH))
+include $(call first-makefiles-under,$(LOCAL_PATH))
 endif
 
 endif
