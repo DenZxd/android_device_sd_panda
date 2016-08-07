@@ -1,7 +1,8 @@
 #!/bin/sh
 
 VENDOR=sd
-DEVICE=sqbin-common
+# DEVICE=sqbin-common
+DEVICE=hd-common
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 

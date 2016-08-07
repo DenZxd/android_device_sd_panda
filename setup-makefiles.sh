@@ -1,7 +1,8 @@
 #!/bin/sh
 
 VENDOR=sd
-DEVICE=sqbin-common
+# DEVICE=sqbin-common
+DEVICE=hd-common
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

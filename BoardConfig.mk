@@ -25,7 +25,9 @@ TARGET_BOOTLOADER_BOARD_NAME := panda
 -include device/sd/sd-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/sd/sqbin-common/BoardConfigVendor.mk
+# -include vendor/sd/sqbin-common/BoardConfigVendor.mk
+# proba vendor for bn
+-include vendor/sd/hd-common/BoardConfigVendor.mk
 
 # boot.img creation
 # BOARD_CUSTOM_BOOTIMG := true
